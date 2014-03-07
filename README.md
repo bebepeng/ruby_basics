@@ -1,6 +1,6 @@
 # gSchool Ruby Basics
 
-See http://tutuorials.gschool.it/ruby_basics for more details.
+See http://tutorials.gschool.it/ruby_basics for more details.
 
 ## Exercises
 
