@@ -1,14 +1,18 @@
 #gets a number and put's into an array separated by chars
 puts "Type a number to turn to roman numerals"
-num = gets.chomp
-sepNum = num.split(//)
+number = gets.chomp
+sepNum = number.split(//)
 
 length = sepNum.length
-#       1    5    10   50  100  500  1000
-sym = ["I", "V", "X", "L", "C", "D", "M"]
 
-rom= 0
-#def romanNum(num, rom)
+def sym
+  #0    1    2    3   4    5    6
+  #1    5    10   50  100  500  1000
+  ["I", "V", "X", "L", "C", "D", "M"]
+end
+
+
+def romanNum(num, rom)
     if num == "2"
       2.times{print "#{sym[rom]}"}
     elsif num == "3"
@@ -26,8 +30,19 @@ rom= 0
     elsif num == "9"
       print "#{sym[rom]}#{sym[rom+2]}"
     end
-#end
+end
 
+if length == 1
+  y=0
+elsif length == 2
+  y=2
+elsif length == 3
+  y=4
+end
 
+for x in 0...length
+  romanNum(sepNum[x],y)
+  y-=2
+end
 
 
