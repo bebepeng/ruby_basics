@@ -1,10 +1,11 @@
 puts "How many bottles?"
 
 beer = gets.chomp
-if beer == ""
+beer_as_int = beer.to_i
+if beer != beer_as_int.to_s
   puts "I need to know how many bottles to sing!"
 else
-  beer = Integer(beer)
+    beer=beer.to_i
 end
 
 def firstBeer(be)

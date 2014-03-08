@@ -50,4 +50,12 @@ describe "beer_on_the_wall" do
     expect(all_output).to_not include("1 bottle of beer on the wall, 1 bottle of beer.\nTake one down and pass it around, no bottles of beer on the wall.\n")
   end
 
+  it "throws an error if it does not know how many number of bottles" do
+    run_script("beer_on_the_wall.rb")
+    type("no")
+
+    expect(all_output).to match("I need to know how many bottles to sing!")
+    expect(all_output).to_not include("1 bottle of beer on the wall, 1 bottle of beer.\nTake one down and pass it around, no bottles of beer on the wall.\n")
+  end
+
 end
