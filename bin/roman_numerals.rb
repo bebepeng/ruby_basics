@@ -13,7 +13,9 @@ end
 
 
 def romanNum(num, rom)
-    if num == "2"
+    if num =="1"
+      print "#{sym[rom]}"
+    elsif num == "2"
       2.times{print "#{sym[rom]}"}
     elsif num == "3"
       3.times{print "#{sym[rom]}"}
@@ -38,6 +40,8 @@ elsif length == 2
   y=2
 elsif length == 3
   y=4
+elsif length == 4
+  y=6
 end
 
 for x in 0...length
