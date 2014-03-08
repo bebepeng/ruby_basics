@@ -1,7 +1,7 @@
 puts "How many bottles?"
 
 beer = gets.chomp
-if beer.to_i ==false || beer == ""
+if beer == ""
   puts "I need to know how many bottles to sing!"
 else
   beer = Integer(beer)
