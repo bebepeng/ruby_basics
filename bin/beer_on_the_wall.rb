@@ -2,8 +2,10 @@ puts "How many bottles?"
 
 beer = gets.chomp
 beer_as_int = beer.to_i
-if beer != beer_as_int.to_s
+if beer == ""
   puts "I need to know how many bottles to sing!"
+elsif beer != beer_as_int.to_s
+  puts "Error No number was entered"
 else
     beer=beer.to_i
 end
