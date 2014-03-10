@@ -6,12 +6,12 @@ if ENV['DEV']
 end
 
 puts "Please type a name"
-name = gets.chomp.capitalize
+name = gets.chomp
 
 spreadsheet = CSV.read(path_to_csv, headers:true)
 
 for x in 0...spreadsheet.length
-  if spreadsheet[x][0] == name || spreadsheet[x][1] == name
+  if spreadsheet[x][0] == name || spreadsheet[x][1] == name || "#{spreadsheet[x][1]} #{spreadsheet[x][0]}" == name
     place = x
   end
 end
