@@ -5,18 +5,20 @@ if ENV['DEV']
   path_to_csv = './bin/birthday_data.csv'
 end
 
-puts "Please type a name"
-name = gets.chomp
+
 
 spreadsheet = CSV.read(path_to_csv, headers:true)
+place = nil
 
-for x in 0...spreadsheet.length
-  if spreadsheet[x][0] == name || spreadsheet[x][1] == name || "#{spreadsheet[x][1]} #{spreadsheet[x][0]}" == name
-    place = x
+puts "Please type a name"
+name = gets.chomp
+spreadsheet.each do |row|
+  if row["first_name"] == name || row["last_name"] == name || "#{row["first_name"]} #{row["last_name"]}" == name
+    place =row
   end
 end
 
-birthday = spreadsheet[place][2].split('/')
+birthday = place[2].split('/')
 age = 2014 - Integer(birthday[0])
 
 if birthday[1] == "01"
